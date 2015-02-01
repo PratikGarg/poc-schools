@@ -13,37 +13,37 @@ $(document).ready(function ($) {
 	
 
 		
-		    map = new GMaps({
-        el: '#map',
-        lat: -12.043333,
-        lng: -77.028333
-      });
-      map.addMarker({
-        lat: -12.043333,
-        lng: -77.03,
-        title: 'Lima',
-        details: {
-          database_id: 42,
-          author: 'HPNeo'
-        },
-        click: function(e){
-          if(console.log)
-            console.log(e);
-          alert('You clicked in this marker');
-        },
-        mouseover: function(e){
-          if(console.log)
-            console.log(e);
-        }
-      });
-      map.addMarker({
-        lat: -12.042,
-        lng: -77.028333,
-        title: 'Marker with InfoWindow',
-        infoWindow: {
-          content: '<p>HTML Content</p>'
-        }
-      });
+	  //      map = new GMaps({
+      //  el: '#map',
+      //  lat: -12.043333,
+      //  lng: -77.028333
+      //});
+      //map.addMarker({
+      //  lat: -12.043333,
+      //  lng: -77.03,
+      //  title: 'Lima',
+      //  details: {
+      //    database_id: 42,
+      //    author: 'HPNeo'
+      //  },
+      //  click: function(e){
+      //    if(console.log)
+      //      console.log(e);
+      //    alert('You clicked in this marker');
+      //  },
+      //  mouseover: function(e){
+      //    if(console.log)
+      //      console.log(e);
+      //  }
+      //});
+      //map.addMarker({
+      //  lat: -12.042,
+      //  lng: -77.028333,
+      //  title: 'Marker with InfoWindow',
+      //  infoWindow: {
+      //    content: '<p>HTML Content</p>'
+      //  }
+      //});
 	
 	/*----------------------------------------------------*/
 	/*	Hidder Header
@@ -513,15 +513,15 @@ $(document).ready(function ($) {
 	
 	(function() {
 		
-	    $('.navbar-nav li a').bind('click', function (event) {
-	        var $anchor = $(this);
+	    $('.navbar-nav li').bind('click', function (event) {
+	        var $anchor = $(this).find('a');
 	        var nav = $($anchor.attr('href'));
 	        if (nav.length) {
 	            $('html, body').stop().animate({
-	                scrollTop: $($anchor.attr('href')).offset().top
+	                scrollTop: $($anchor.attr('href')).offset().top-20
 	            }, 1500, 'easeInOutExpo');
 	            $('.navbar-nav li').removeClass("active");
-	           $( $anchor).parent("li").addClass("active");
+	           $( this).addClass("active");
 	            event.preventDefault();
 	        }
 	    });
