@@ -11,17 +11,7 @@ $(window).load(function () {
 $(document).ready(function ($) {
 	"use strict";
 	
-	$('.navbar-nav li a').bind('click', function(event) {
-			var $anchor = $(this);
-			var nav = $($anchor.attr('href'));
-			if (nav.length) {
-			$('html, body').stop().animate({				
-				scrollTop: $($anchor.attr('href')).offset().top				
-			}, 1500, 'easeInOutExpo');
-			
-			event.preventDefault();
-			}
-		});
+
 		
 		    map = new GMaps({
         el: '#map',
@@ -523,9 +513,22 @@ $(document).ready(function ($) {
 	
 	(function() {
 		
+	    $('.navbar-nav li a').bind('click', function (event) {
+	        var $anchor = $(this);
+	        var nav = $($anchor.attr('href'));
+	        if (nav.length) {
+	            $('html, body').stop().animate({
+	                scrollTop: $($anchor.attr('href')).offset().top
+	            }, 1500, 'easeInOutExpo');
+	            $('.navbar-nav li').removeClass("active");
+	           $( $anchor).parent("li").addClass("active");
+	            event.preventDefault();
+	        }
+	    });
+
 		var docElem = document.documentElement,
 			didScroll = false,
-			changeHeaderOn = 100;
+			changeHeaderOn = 505;
 			document.querySelector( 'header' );
 			
 		function init() {
@@ -538,31 +541,33 @@ $(document).ready(function ($) {
 		}
 		
 		function scrollPage() {
+		 
 			var sy = scrollY();
 			if ( sy >= changeHeaderOn ) {
-				$('.top-bar').slideUp(300);
-				$("header").addClass("fixed-header");
-				$('.navbar-brand').css({ 'padding-top' : 19 + "px", 'padding-bottom' : 19 + "px" });
 				
-				if (/iPhone|iPod|BlackBerry/i.test(navigator.userAgent) || $(window).width() < 479 ){
-					$('.navbar-default .navbar-nav > li > a').css({ 'padding-top' : 0 + "px", 'padding-bottom' : 0 + "px" })
-				}else{
-					$('.navbar-default .navbar-nav > li > a').css({ 'padding-top' : 20 + "px", 'padding-bottom' : 20 + "px" })
-					$('.search-side').css({ 'margin-top' : -7 + "px" });
-				};
+			    $(".navbar").addClass("navbar-fixed");
+			    $(".navbar").addClass("fixed-header");
+			//	$('.navbar-brand').css({ 'padding-top' : 19 + "px", 'padding-bottom' : 19 + "px" });
+				
+				//if (/iPhone|iPod|BlackBerry/i.test(navigator.userAgent) || $(window).width() < 479 ){
+				//	$('.navbar-default .navbar-nav > li > a').css({ 'padding-top' : 0 + "px", 'padding-bottom' : 0 + "px" })
+				//}else{
+				//	$('.navbar-default .navbar-nav > li > a').css({ 'padding-top' : 20 + "px", 'padding-bottom' : 20 + "px" })
+				//	$('.search-side').css({ 'margin-top' : -7 + "px" });
+				//};
 				
 			}
 			else {
-				$('.top-bar').slideDown(300);
-				$("header").removeClass("fixed-header");
-				$('.navbar-brand').css({ 'padding-top' : 27 + "px", 'padding-bottom' : 27 + "px" });
+			    $(".navbar").removeClass("navbar-fixed");
+			    $(".navbar").removeClass("fixed-header");
+				//$('.navbar-brand').css({ 'padding-top' : 27 + "px", 'padding-bottom' : 27 + "px" });
 				
-				if (/iPhone|iPod|BlackBerry/i.test(navigator.userAgent) || $(window).width() < 479 ){
-					$('.navbar-default .navbar-nav > li > a').css({ 'padding-top' : 0 + "px", 'padding-bottom' : 0 + "px" })
-				}else{
-					$('.navbar-default .navbar-nav > li > a').css({ 'padding-top' : 28 + "px", 'padding-bottom' : 28 + "px" })
-					$('.search-side').css({ 'margin-top' : 0  + "px" });
-				};
+				//if (/iPhone|iPod|BlackBerry/i.test(navigator.userAgent) || $(window).width() < 479 ){
+				//	$('.navbar-default .navbar-nav > li > a').css({ 'padding-top' : 0 + "px", 'padding-bottom' : 0 + "px" })
+				//}else{
+				//	$('.navbar-default .navbar-nav > li > a').css({ 'padding-top' : 28 + "px", 'padding-bottom' : 28 + "px" })
+				//	$('.search-side').css({ 'margin-top' : 0  + "px" });
+				//};
 				
 			}
 			didScroll = false;
