@@ -511,24 +511,29 @@ $(document).ready(function ($) {
 	/*	Sticky Header
 	/*----------------------------------------------------*/
 	
-	(function() {
-		
+    (function () {
+
+        $('#search-location').typeahead({
+                                                                        
+            source: ['Audi', 'BMW', 'Bugatti', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 'Porsche', 'Rolls-Royce', 'Volkswagen']
+        });
+
+        $('body').scrollspy({ target: '#navbar' });
 	    $('.navbar-nav li').bind('click', function (event) {
 	        var $anchor = $(this).find('a');
 	        var nav = $($anchor.attr('href'));
 	        if (nav.length) {
 	            $('html, body').stop().animate({
-	                scrollTop: $($anchor.attr('href')).offset().top-20
+	                scrollTop: $($anchor.attr('href')).offset().top
 	            }, 1500, 'easeInOutExpo');
-	            $('.navbar-nav li').removeClass("active");
-	           $( this).addClass("active");
+	  
 	            event.preventDefault();
 	        }
 	    });
 
 		var docElem = document.documentElement,
 			didScroll = false,
-			changeHeaderOn = 505;
+			changeHeaderOn = 850;;
 			document.querySelector( 'header' );
 			
 		function init() {
