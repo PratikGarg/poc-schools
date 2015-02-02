@@ -500,6 +500,13 @@ header {
 	line-height: 32px;
 }
 
+.home {
+    background:url("../images/slider/school-bg.jpg") no-repeat;
+    width:100%;
+    height:550px;
+    background-size:cover;
+}
+
 ul.social-list {
     float: right;
 }

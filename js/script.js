@@ -533,7 +533,7 @@ $(document).ready(function ($) {
 
 		var docElem = document.documentElement,
 			didScroll = false,
-			changeHeaderOn = 850;;
+			changeHeaderOn = 600;
 			document.querySelector( 'header' );
 			
 		function init() {
