@@ -590,8 +590,6 @@ ul.social-list li:last-child a i {
     text-align: center;
     transition: all 0.2s ease-in-out 0s;
     width: 38px;
-    
-    margin-left: 30px;
     margin-top: 10px;
 }
 
@@ -674,6 +672,8 @@ ul.social-list li:last-child a i {
 
 .navbar-default .navbar-nav > li {
     margin-left: 6px;
+    text-align: center;
+
 }
 
 .navbar-default .navbar-nav > li:first-child {
@@ -694,8 +694,17 @@ transition: all 0.3s ease-in-out;
 -o-transition: all 0.3s ease-in-out;
 }
 
-.navbar-default .navbar-nav  > li.active {
-	background-color:#f6f6f6;
+.navbar-default .navbar-nav  > li.active,.navbar-default .navbar-nav  > li.active:hover {
+	background-color:#666;
+}
+
+.navbar-default .navbar-nav  > li:hover {
+	background-color:#f3f3f3    ;
+    color:#666 !important;
+}
+
+.navbar-default .navbar-nav  > li.active >a:hover {
+    color: #ffffff;
 }
 
 .navbar-default .navbar-nav  > li {
@@ -705,7 +714,12 @@ transition: all 0.3s ease-in-out;
 
 
 .navbar-default .navbar-nav  > li.active>a {
-    background-color:#f6f6f6 !important;
+    background-color:#666 !important;
+    color: #ffffff;
+}
+
+.navbar-default .navbar-nav  > li.active> .nav-icon > i{
+    color:#fff !important;
  
 }
 
@@ -1812,6 +1826,13 @@ input[type="submit"] {
 
 /*************** Buttons ***************/
 
+/*.btn-default {
+    background-color: #ee3733;
+    font-weight: bold;
+    border:1px solid #ee3733;
+    color: #fff;
+}*/
+
 .btn {
 	border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -2113,8 +2134,9 @@ ul.icons-list li i {
 
 
 .section {
-    padding-top: 80px;
-    padding-bottom: 80px;
+     margin-top: 60px;
+    padding-bottom: 60px;
+    padding-top: 60px;
 }
 
 
@@ -2914,16 +2936,20 @@ ul.icons-list li i {
 /*************** Heading Titles ***************/
 
 .classic-title {
-	margin-bottom: 16px;
-	padding-bottom: 8px;
-	border-bottom: 1px solid #eee;
+
+    font-size: 25px;
     font-weight: 300;
+    margin-bottom: 36px;
+    padding-bottom: 8px;
+
 }
 
 
 .classic-title span {
-	padding-bottom: 8px;
-	border-bottom: 1px solid;
+ border-bottom: 5px solid #666;
+    padding-bottom: 8px;
+    padding-right: 50px;
+}
 }
 
 .big-title {
@@ -4018,6 +4044,8 @@ ul.post-meta li, ul.post-meta li a {
 
 .dropdown-menu {
     width: 250px;
+    overflow: auto;
+    max-height: 200px;
 }
 
 .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
@@ -4025,6 +4053,10 @@ ul.post-meta li, ul.post-meta li a {
     color: #fff;
     outline: 0 none;
     text-decoration: none;
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid #f3f3f3;
 }
 
 
@@ -4038,6 +4070,16 @@ ul.post-meta li, ul.post-meta li a {
     padding: 12px 12px;
     pointer-events: none;
     left: 0px;
+}
+
+.widget-search a.main-button, input[type="submit"] {
+    font-size: 14px;
+}
+
+.widget-search .main-button {
+    height: 38px;
+    font-weight: bold;
+    margin-top: 1px;
 }
 
 .widget-search .col-xs-4 {

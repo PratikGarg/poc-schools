@@ -61,13 +61,13 @@
     <script type="text/javascript" src="js/script.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=visualization"></script>
     <script type="text/javascript" src="js/maps.js"></script>
-    
+
     <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    
-       
-    
-    
+
+
+
+
 </head>
 <body>
     <!-- Full Body Container -->
@@ -84,16 +84,19 @@
                             </div>
                             <div class="col-md-9">
                                 <div class="widget widget-search ">
-                                    <div class="col-xs-4">
+                                    <div class="col-xs-4" style="padding-right: 0px;">
                                         <div class="left-inner-addon ">
-
                                             <input type="search" id="search-location" autocomplete="off" spellcheck="false" placeholder="Select Location">
                                             <i class="fa fa-map-marker"></i>
                                         </div>
                                     </div>
-                                    <input type="search" id="search-keyword" placeholder="Enter Keywords">
-                                    <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
-
+                                    <div class="col-xs-6" style="padding-left: 0; padding-right: 0;">
+                                        <div class="left-inner-addon ">
+                                            <input type="search" id="search-keyword" placeholder="Enter Keywords">
+                                            <i class="fa fa-search"></i>
+                                        </div>
+                                        <input class="main-button" type="submit" value="Search">
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-1 login-box">
@@ -108,7 +111,6 @@
                 <section id="home">
                     <div class="home">
                         <div class="container">
-                            <div class="col-md-12" style="text-align:center;font-size:50px;color:#fff;padding-top:300px;">Presedium</div>
                         </div>
                     </div>
                 </section>
@@ -121,7 +123,7 @@
         <nav id="navbar" class="navbar navbar-default">
             <div class="container">
                 <div class="col-md-3 nav-result-box">
-                    <h5><i class="fa fa-chevron-left"></i>Back to the search results</h5>
+                    <h5><i class="fa fa-chevron-left"></i>&nbsp;Back to the search results</h5>
                 </div>
                 <div class="col-md-9">
                     <!-- Start Navigation List -->
@@ -166,51 +168,52 @@
 
         <!-- End Header Logo & Naviagtion -->
         <!-- Start Services Section -->
-       
-        <div id="service" class="section service" style="padding-top:40px;padding-bottom:40px">
+
+        <div id="service" class="section service" style="padding-top: 40px; padding-bottom: 40px">
             <!-- Start Big Heading -->
             <div class="big-title" data-animation="fadeInDown" data-animation-delay="01">
-                <span style="font-size:30px;padding-left:550px">About  <strong>Presedium</span></h1>
+                <span style="font-size: 30px; padding-left: 550px">About  <strong>Presedium</strong></span>
                 <ul class="social-list">
-				<div style="padding-right:20px">
-							<!-- Start Social Links -->
-							<ul class="social-list">
-								<li>
-									<a class="facebook itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
-								</li>
-								<li>
-									<a class="twitter itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
-								</li>
-								<li>
-									<a class="google itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Google Plus"><i class="fa fa-google-plus"></i></a>
-								</li>
-								<li>
-									<a class="dribbble itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Dribble"><i class="fa fa-dribbble"></i></a>
-								</li>
-								<li>
-									<a class="linkdin itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Linkedin"><i class="fa fa-linkedin"></i></a>
-								</li>
-								<li>
-									<a class="flickr itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Flickr"><i class="fa fa-flickr"></i></a>
-								</li>
-								<li>
-									<a class="tumblr itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Tumblr"><i class="fa fa-tumblr"></i></a>
-								</li>
-								<li>
-									<a class="instgram itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Instagram"><i class="fa fa-instagram"></i></a>
-								</li>
-								<li>
-									<a class="vimeo itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="vimeo"><i class="fa fa-vimeo-square"></i></a>
-								</li>
-								<li>
-									<a class="skype itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Skype"><i class="fa fa-skype"></i></a>
-								</li>
-							</ul>
-							<!-- End Social Links -->
-						</div>
+                    <div style="padding-right: 20px">
+                        <!-- Start Social Links -->
+                        <ul class="social-list">
+                            <li>
+                                <a class="facebook itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a class="twitter itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a class="google itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Google Plus"><i class="fa fa-google-plus"></i></a>
+                            </li>
+                            <li>
+                                <a class="dribbble itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Dribble"><i class="fa fa-dribbble"></i></a>
+                            </li>
+                            <li>
+                                <a class="linkdin itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a class="flickr itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Flickr"><i class="fa fa-flickr"></i></a>
+                            </li>
+                            <li>
+                                <a class="tumblr itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Tumblr"><i class="fa fa-tumblr"></i></a>
+                            </li>
+                            <li>
+                                <a class="instgram itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Instagram"><i class="fa fa-instagram"></i></a>
+                            </li>
+                            <li>
+                                <a class="vimeo itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="vimeo"><i class="fa fa-vimeo-square"></i></a>
+                            </li>
+                            <li>
+                                <a class="skype itl-tooltip" data-placement="bottom" title="" href="#" data-original-title="Skype"><i class="fa fa-skype"></i></a>
+                            </li>
+                        </ul>
+                        <!-- End Social Links -->
+                    </div>
+                </ul>
             </div>
-            <br/>
-             
+            <br />
+
             <!-- End Big Heading -->
             <p class="text-center">
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
@@ -220,15 +223,15 @@
         </div>
         <!-- End Services Section -->
 
-        <div class=" service" style="background-color: #5b95c4;padding-top:20px;padding-bottom:20px">
+        <div class=" service" style="background-color: #5b95c4; padding-top: 20px; padding-bottom: 20px">
             <div class="container">
-            	
-                <div class="row" style="background-color:#f8f4fa">
-                <div class="big-title" style="text-align:center;padding-top:20px">
-								<h1><span style="border-bottom-color:#ee3733;"><strong>Overview</strong></span></h1>
-					</div>
-					<hr width="10%" style="border-color:black"/>
-                <br/>
+
+                <div class="row" style="background-color: #f8f4fa">
+                    <div class="big-title" style="text-align: center; padding-top: 20px">
+                        <h1><span style="border-bottom-color: #ee3733;"><strong>Overview</strong></span></h1>
+                    </div>
+                    <hr width="10%" style="border-color: black" />
+                    <br />
                     <!-- Start Service Icon 1 -->
                     <div class="col-md-2 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="01">
                         <div class="service-icon">
@@ -301,8 +304,8 @@
                         </div>
                     </div>
                     <!-- End Service Icon 6 -->
-                  </div>
-                   <div class="row" style="background-color:#f8f4fa;">
+                </div>
+                <div class="row" style="background-color: #f8f4fa;">
                     <div class="col-md-2 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="06">
                         <div class="service-icon">
                             <i class="fa fa-css3 icon-large"></i>
@@ -312,15 +315,15 @@
                             <p>7am - 9pm</p>
                         </div>
                     </div>
-                   </div>
-                <hr/>
+                </div>
+                <hr />
 
-                  <div class="row" style="background-color:#f8f4fa;">  
+                <div class="row" style="background-color: #f8f4fa;">
                     <!-- Start Service Icon 7 -->
-                     <div class="big-title" style="text-align:center;padding-top:20px">
-								<h1><span><strong>Transportation</strong></span></h1>
-					</div>
-					<hr width="10%" style="border-color:black"/>
+                    <div class="big-title" style="text-align: center; padding-top: 20px">
+                        <h1><span><strong>Transportation</strong></span></h1>
+                    </div>
+                    <hr width="10%" style="border-color: black" />
 
                     <div class="col-md-2 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="07">
                         <div class="service-icon">
@@ -371,7 +374,7 @@
                         </div>
                         <div class="service-content">
                             <h2>Class Room Type</h2>
-                            <p> Aircondioned</p>
+                            <p>Aircondioned</p>
                         </div>
                     </div>
                     <div class="col-md-2 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="03">
@@ -380,12 +383,12 @@
                         </div>
                         <div class="service-content">
                             <h2>Established Year</h2>
-                            <p> 1984</p>
+                            <p>1984</p>
                         </div>
                     </div>
                     <!-- End Service Icon 8 -->
                 </div>
-                
+
                 <!-- .row -->
                 <!-- .row -->
 
@@ -395,465 +398,394 @@
 
         </div>
         <!-- End Services Section -->
-        <div style="background-color:whitesmoke">
-         <div id="facilities" style="padding-top:80px">
-                        <div class="container">
-                            <!-- Start Big Heading -->
-                            <div data-animation="fadeInDown" data-animation-delay="01">
-                                <h2 style="text-align:center"><span>Contact Details</span></h2>
-                                <hr width="10%" style="border-color:black"/>
-                                <div class="col-md-6">
+        <div style="background-color: whitesmoke">
+            <div id="facilities" style="padding-top: 80px">
+                <div class="container">
+                    <!-- Start Big Heading -->
+                    <div data-animation="fadeInDown" data-animation-delay="01">
+                        <h2 style="text-align: center"><span>Contact Details</span></h2>
+                        <hr width="10%" style="border-color: black" />
+                        <div class="col-md-6">
+                            <!-- Divider -->
+                            <div style="margin-bottom: 10px;" class="hr1"></div>
 
+                            <!-- Info - Icons List -->
+                            <ul class="icons-list">
+                                <li><i class="fa fa-globe"></i><strong>Address:</strong> 1234 Street Name, Bangladesh.</li>
+                                <li><i class="fa fa-envelope-o"></i><strong>Email:</strong> info@yourcompany.com</li>
+                                <li><i class="fa fa-mobile"></i><strong>Phone:</strong> +12 345 678 001</li>
+                            </ul>
+                            <!-- Divider -->
+                            <div style="margin-bottom: 15px;" class="hr1"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- Info - List -->
+                            <ul class="list-unstyled">
+                                <li><strong>Monday - Friday</strong> - 9am to 5pm</li>
+                                <li><strong>Saturday</strong> - 9am to 2pm</li>
+                                <li><strong>Sunday</strong> - Closed</li>
+                            </ul>
 
-
-                                    <!-- Divider -->
-                                    <div style="margin-bottom: 10px;" class="hr1"></div>
-
-                                    <!-- Info - Icons List -->
-                                    <ul class="icons-list">
-                                        <li><i class="fa fa-globe"></i><strong>Address:</strong> 1234 Street Name, Bangladesh.</li>
-                                        <li><i class="fa fa-envelope-o"></i><strong>Email:</strong> info@yourcompany.com</li>
-                                        <li><i class="fa fa-mobile"></i><strong>Phone:</strong> +12 345 678 001</li>
-                                    </ul>
-
-                                    <!-- Divider -->
-                                    <div style="margin-bottom: 15px;" class="hr1"></div>
-
-
-                                </div>
-                                <div class="col-md-6">
-
-
-                                    <!-- Info - List -->
-                                    <ul class="list-unstyled">
-                                        <li><strong>Monday - Friday</strong> - 9am to 5pm</li>
-                                        <li><strong>Saturday</strong> - 9am to 2pm</li>
-                                        <li><strong>Sunday</strong> - Closed</li>
-                                    </ul>
-
-                                </div>
-                            </div>
-                            <!-- End Big Heading -->
                         </div>
                     </div>
-        <br/>
-        <div id="map-canvas" style="height:500px;width:100%"><br/>
+                    <!-- End Big Heading -->
+                </div>
+            </div>
+            <div id="map-canvas" style="height:500px;width:100%"><br/>
         </div>
        
-       
-      
-                    <!-- Start Services Section -->
-                    
-                    <!-- End Services Section -->
+        </div>
 
-                    <!-- Start Services Section -->
-                   
-                    <!-- End Services Section -->
-                    <!-- Start Testimonials Section -->
-                    <div id="videos" class="section">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
 
-                                    <!-- Start Recent Posts Carousel -->
-                                    <div class="latest-posts">
-                                        <h4 class="classic-title"><span>Videos</span></h4>
-                                        <div class="latest-posts-classic custom-carousel touch-carousel" data-appeared-items="2">
-
-                                            <!-- Posts 1 -->
-                                            <div class="post-row item">
-                                                <div class="left-meta-post">
-                                                    <div class="post-date"><span class="day">28</span><span class="month">Dec</span></div>
-                                                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                                                </div>
-                                                <h3 class="post-title"><a href="#">Standard Post With Image</a></h3>
-                                                <div class="post-content">
-                                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
+        <!-- End Services Section -->
+        <!-- Start Testimonials Section -->
+        <div style="background-color: #444; color: #ffffff !important;">
+            <div id="videos" class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Start Recent Posts Carousel -->
+                            <div class="latest-posts">
+                                <h4 style="color: #fff" class="classic-title"><span>Videos</span></h4>
+                                <div class="latest-posts-classic custom-carousel touch-carousel" data-appeared-items="2">
+                                    <!-- Posts 1 -->
+                                    <div class="post-row item">
+                                        <h3 class="post-title"><a href="#" style="color: #fff">Standard Post With Image</a></h3>
+                                        <div class="post-content">
+                                            <!-- Video Widget -->
+                                            <div class="widget">
+                                                <div>
+                                                    <iframe src="http://player.vimeo.com/video/63322694?byline=0&amp;portrait=0&amp;badge=0" width="800" height="450"></iframe>
                                                 </div>
                                             </div>
-
-                                            <!-- Posts 2 -->
-                                            <div class="post-row item">
-                                                <div class="left-meta-post">
-                                                    <div class="post-date"><span class="day">26</span><span class="month">Dec</span></div>
-                                                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                                                </div>
-                                                <h3 class="post-title"><a href="#">Link Post</a></h3>
-                                                <div class="post-content">
-                                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
-                                                </div>
-                                            </div>
-
-                                            <!-- Posts 3 -->
-                                            <div class="post-row item">
-                                                <div class="left-meta-post">
-                                                    <div class="post-date"><span class="day">26</span><span class="month">Dec</span></div>
-                                                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                                                </div>
-                                                <h3 class="post-title"><a href="#">Iframe Video Post</a></h3>
-                                                <div class="post-content">
-                                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
-                                                </div>
-                                            </div>
-
-                                            <!-- Posts 4 -->
-                                            <div class="post-row item">
-                                                <div class="left-meta-post">
-                                                    <div class="post-date"><span class="day">26</span><span class="month">Dec</span></div>
-                                                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                                                </div>
-                                                <h3 class="post-title"><a href="#">Gallery Post</a></h3>
-                                                <div class="post-content">
-                                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
-                                                </div>
-                                            </div>
-
-                                            <!-- Posts 5 -->
-                                            <div class="post-row item">
-                                                <div class="left-meta-post">
-                                                    <div class="post-date"><span class="day">26</span><span class="month">Dec</span></div>
-                                                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                                                </div>
-                                                <h3 class="post-title"><a href="#">Standard Post without Image</a></h3>
-                                                <div class="post-content">
-                                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
-                                                </div>
-                                            </div>
-
-                                            <!-- Posts 6 -->
-                                            <div class="post-row item">
-                                                <div class="left-meta-post">
-                                                    <div class="post-date"><span class="day">26</span><span class="month">Dec</span></div>
-                                                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
-                                                </div>
-                                                <h3 class="post-title"><a href="#">Iframe Audio Post</a></h3>
-                                                <div class="post-content">
-                                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit. <a class="read-more" href="#">Read More...</a></p>
-                                                </div>
-                                            </div>
-
                                         </div>
                                     </div>
-                                    <!-- End Recent Posts Carousel -->
+                                    <!-- Posts 1 -->
+                                    <div class="post-row item">
+                                        <h3 class="post-title"><a href="#" style="color: #fff">Standard Post With Image</a></h3>
+                                        <div class="post-content">
+                                            <!-- Video Widget -->
+                                            <div class="widget">
+                                                <div>
+                                                    <iframe src="http://player.vimeo.com/video/63322694?byline=0&amp;portrait=0&amp;badge=0" width="800" height="450"></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-row item">
+                                        <h3 class="post-title"><a href="#" style="color: #fff">Standard Post With Image</a></h3>
+                                        <div class="post-content">
+                                            <!-- Video Widget -->
+                                            <div class="widget">
+                                                <div>
+                                                    <iframe src="http://player.vimeo.com/video/63322694?byline=0&amp;portrait=0&amp;badge=0" width="800" height="450"></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-row item">
+                                        <h3 class="post-title"><a href="#" style="color: #fff">Standard Post With Image</a></h3>
+                                        <div class="post-content">
+                                            <!-- Video Widget -->
+                                            <div class="widget">
+                                                <div>
+                                                    <iframe src="http://player.vimeo.com/video/63322694?byline=0&amp;portrait=0&amp;badge=0" width="800" height="450"></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                 </div>
-
-
                             </div>
+
+
+                            <!-- End Recent Posts Carousel -->
                         </div>
-                    </div>
 
-                    <!-- End Testimonials Section -->
-                    <!-- Start Team Member Section -->
-                    <div id="location" class="section" style="background: #fff;">
-                        <div class="container">
-                            <h4 class="classic-title"><span>Location Map</span></h4>
-                            <div class="col-md-6">
-
-                                <!-- Classic Heading -->
-                                <h4><span>Information</span></h4>
-
-
-                                <!-- Divider -->
-                                <div style="margin-bottom: 10px;" class="hr1"></div>
-
-                                <!-- Info - Icons List -->
-                                <ul class="icons-list">
-                                    <li><i class="fa fa-globe"></i><strong>Address:</strong> 1234 Street Name, Bangladesh.</li>
-                                    <li><i class="fa fa-envelope-o"></i><strong>Email:</strong> info@yourcompany.com</li>
-                                    <li><i class="fa fa-mobile"></i><strong>Phone:</strong> +12 345 678 001</li>
-                                </ul>
-
-                                <!-- Divider -->
-                                <div style="margin-bottom: 15px;" class="hr1"></div>
-
-
-                            </div>
-                            <div class="col-md-6">
-                                <!-- Classic Heading -->
-                                <h4><span>Working Hours</span></h4>
-
-                                <!-- Info - List -->
-                                <ul class="list-unstyled">
-                                    <li><strong>Monday - Friday</strong> - 9am to 5pm</li>
-                                    <li><strong>Saturday</strong> - 9am to 2pm</li>
-                                    <li><strong>Sunday</strong> - Closed</li>
-                                </ul>
-
-                            </div>
-                            <div id="map"></div>
-                        </div>
-                        <!-- .container -->
-                    </div>
-                    <!-- End Team Member Section -->
-
-
-                    <div id="images" class=" section container">
-                        <h4 class="classic-title"><span>Images</span></h4>
-                        <!-- Carousel -->
-                        <div id="main-slide" class="carousel slide" data-ride="carousel">
-                            <!-- Indicators -->
-                            <ol class="carousel-indicators">
-                                <li data-target="#main-slide" data-slide-to="0" class="active"></li>
-                                <li data-target="#main-slide" data-slide-to="1"></li>
-                                <li data-target="#main-slide" data-slide-to="2"></li>
-                            </ol>
-                            <!--/ Indicators end-->
-                            <!-- Carousel inner -->
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <img class="img-responsive" src="images/slider/bg1.jpg" alt="slider">
-                                    <div class="slider-content">
-                                        <div class="col-md-12 text-center">
-                                            <h2 class="animated2">
-                                                <span>Welcome to <strong>Margo</strong></span>
-                                            </h2>
-                                            <h3 class="animated3">
-                                                <span>The ultimate aim of your business</span>
-                                            </h3>
-                                            <p class="animated4">
-                                                <a href="#" class="slider btn btn-primary">Check Now</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--/ Carousel item end -->
-                                <div class="item">
-                                    <img class="img-responsive" src="images/slider/bg2.jpg" alt="slider">
-                                    <div class="slider-content">
-                                        <div class="col-md-12 text-center">
-                                            <h2 class="animated4">
-                                                <span><strong>Margo</strong> for the highest</span>
-                                            </h2>
-                                            <h3 class="animated5">
-                                                <span>The Key of your Success</span>
-                                            </h3>
-                                            <p class="animated6">
-                                                <a href="#" class="slider btn btn-primary">Buy Now</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--/ Carousel item end -->
-                                <div class="item">
-                                    <img class="img-responsive" src="images/slider/bg3.jpg" alt="slider">
-                                    <div class="slider-content">
-                                        <div class="col-md-12 text-center">
-                                            <h2 class="animated7 white">
-                                                <span>The way of <strong>Success</strong></span>
-                                            </h2>
-                                            <h3 class="animated8 white">
-                                                <span>Why you are waiting</span>
-                                            </h3>
-                                            <div class="">
-                                                <a class="animated4 slider btn btn-primary btn-min-block" href="#">Get Now</a><a class="animated4 slider btn btn-default btn-min-block" href="#">Live Demo</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--/ Carousel item end -->
-                            </div>
-                            <!-- Carousel inner end-->
-                            <!-- Controls -->
-                            <a class="left carousel-control" href="#main-slide" data-slide="prev">
-                                <span><i class="fa fa-angle-left"></i></span>
-                            </a>
-                            <a class="right carousel-control" href="#main-slide" data-slide="next">
-                                <span><i class="fa fa-angle-right"></i></span>
-                            </a>
-                        </div>
-                        <!-- /carousel -->
                     </div>
 
 
                 </div>
-
-                <!-- Start Footer Section -->
-                <footer>
-                    <div class="container">
-                        <div class="row footer-widgets">
-
-
-                            <!-- Start Subscribe & Social Links Widget -->
-                            <div class="col-md-3 col-xs-12">
-                                <div class="footer-widget mail-subscribe-widget">
-                                    <h4>Get in touch<span class="head-line"></span></h4>
-                                    <p>Join our mailing list to stay up to date and get notices about our new releases!</p>
-                                    <form class="subscribe">
-                                        <input type="text" placeholder="mail@example.com">
-                                        <input type="submit" class="main-button" value="Send">
-                                    </form>
-                                </div>
-                                <div class="footer-widget social-widget">
-                                    <h4>Follow Us<span class="head-line"></span></h4>
-                                    <ul class="social-icons">
-                                        <li>
-                                            <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-                                        </li>
-                                        <li>
-                                            <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-                                        </li>
-                                        <li>
-                                            <a class="google" href="#"><i class="fa fa-google-plus"></i></a>
-                                        </li>
-                                        <li>
-                                            <a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
-                                        </li>
-                                        <li>
-                                            <a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
-                                        </li>
-                                        <li>
-                                            <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
-                                        </li>
-                                        <li>
-                                            <a class="tumblr" href="#"><i class="fa fa-tumblr"></i></a>
-                                        </li>
-                                        <li>
-                                            <a class="instgram" href="#"><i class="fa fa-instagram"></i></a>
-                                        </li>
-                                        <li>
-                                            <a class="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
-                                        </li>
-                                        <li>
-                                            <a class="skype" href="#"><i class="fa fa-skype"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- .col-md-3 -->
-                            <!-- End Subscribe & Social Links Widget -->
-                            <!-- Start Twitter Widget -->
-                            <div class="col-md-3 col-xs-12">
-                                <div class="footer-widget twitter-widget">
-                                    <h4>Twitter Feed<span class="head-line"></span></h4>
-                                    <ul>
-                                        <li>
-                                            <p><a href="#">@ithemeslab </a>Lorem ipsum dolor et, consectetur adipiscing eli.</p>
-                                            <span>28 February 2014</span>
-                                        </li>
-                                        <li>
-                                            <p><a href="#">@ithemeslab </a>Lorem ipsum dolor et, consectetur adipiscing eli.An Fusce eleifend aliquet nis application.</p>
-                                            <span>26 February 2014</span>
-                                        </li>
-                                        <li>
-                                            <p><a href="#">@ithemeslab </a>Lorem ipsum dolor et, consectetur adipiscing eli.</p>
-                                            <span>28 February 2014</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- .col-md-3 -->
-                            <!-- End Twitter Widget -->
-                            <!-- Start Flickr Widget -->
-                            <div class="col-md-3 col-xs-12">
-                                <div class="footer-widget flickr-widget">
-                                    <h4>Flicker Feed<span class="head-line"></span></h4>
-                                    <ul class="flickr-list">
-                                        <li>
-                                            <a href="images/flickr-01.jpg" class="lightbox">
-                                                <img alt="" src="images/flickr-01.jpg">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="images/flickr-02.jpg" class="lightbox">
-                                                <img alt="" src="images/flickr-02.jpg">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="images/flickr-03.jpg" class="lightbox">
-                                                <img alt="" src="images/flickr-03.jpg">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="images/flickr-04.jpg" class="lightbox">
-                                                <img alt="" src="images/flickr-04.jpg">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="images/flickr-05.jpg" class="lightbox">
-                                                <img alt="" src="images/flickr-05.jpg">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="images/flickr-06.jpg" class="lightbox">
-                                                <img alt="" src="images/flickr-06.jpg">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="images/flickr-07.jpg" class="lightbox">
-                                                <img alt="" src="images/flickr-07.jpg">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="images/flickr-08.jpg" class="lightbox">
-                                                <img alt="" src="images/flickr-08.jpg">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="images/flickr-09.jpg" class="lightbox">
-                                                <img alt="" src="images/flickr-09.jpg">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- .col-md-3 -->
-                            <!-- End Flickr Widget -->
-                            <!-- Start Contact Widget -->
-                            <div class="col-md-3 col-xs-12">
-                                <div class="footer-widget contact-widget">
-                                    <h4>
-                                        <img src="images/footer-margo.png" class="img-responsive" alt="Footer Logo" /></h4>
-                                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-                                    <ul>
-                                        <li><span>Phone Number:</span> +01 234 567 890</li>
-                                        <li><span>Email:</span> company@company.com</li>
-                                        <li><span>Website:</span> www.yourdomain.com</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- .col-md-3 -->
-                            <!-- End Contact Widget -->
-
-                        </div>
-                        <!-- .row -->
-                        <!-- Start Copyright -->
-                        <div class="copyright-section">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <p>&copy; 2014 Margo -  All Rights Reserved <a href="http://graygrids.com">GrayGrids</a> </p>
-                                </div>
-                                <!-- .col-md-6 -->
-                                <div class="col-md-6">
-                                    <ul class="footer-nav">
-                                        <li>
-                                            <a href="#">Sitemap</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Privacy Policy</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Contact</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- .col-md-6 -->
-                            </div>
-                            <!-- .row -->
-                        </div>
-                        <!-- End Copyright -->
-                    </div>
-                </footer>
-                <!-- End Footer Section -->
             </div>
+        </div>
+
+        <!-- End Testimonials Section -->
+
+        <div style="background-color: #f3f3f3;">
+
+            <div id="images" class=" section container">
+                <h4 class="classic-title"><span>Images</span></h4>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default">Facility</button>
+                    <button type="button" class="btn btn-default">PlayGround</button>
+                    <button type="button" class="btn btn-default">Library</button>
+                </div>
+                <div>
+                    <br />
+                </div>
+
+                <!-- Carousel -->
+                <div id="main-slide" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#main-slide" data-slide-to="0" class="active"></li>
+                        <li data-target="#main-slide" data-slide-to="1"></li>
+                        <li data-target="#main-slide" data-slide-to="2"></li>
+                    </ol>
+                    <!--/ Indicators end-->
+                    <!-- Carousel inner -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img class="img-responsive" src="images/slider/bg1.jpg" alt="slider">
+                            <div class="slider-content">
+                                <div class="col-md-12 text-center">
+                                    <h2 class="animated2">
+                                        <span>Welcome to <strong>Margo</strong></span>
+                                    </h2>
+                                    <h3 class="animated3">
+                                        <span>The ultimate aim of your business</span>
+                                    </h3>
+                                    <p class="animated4">
+                                        <a href="#" class="slider btn btn-primary">Check Now</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ Carousel item end -->
+                        <div class="item">
+                            <img class="img-responsive" src="images/slider/bg2.jpg" alt="slider">
+                            <div class="slider-content">
+                                <div class="col-md-12 text-center">
+                                    <h2 class="animated4">
+                                        <span><strong>Margo</strong> for the highest</span>
+                                    </h2>
+                                    <h3 class="animated5">
+                                        <span>The Key of your Success</span>
+                                    </h3>
+                                    <p class="animated6">
+                                        <a href="#" class="slider btn btn-primary">Buy Now</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ Carousel item end -->
+                        <div class="item">
+                            <img class="img-responsive" src="images/slider/bg3.jpg" alt="slider">
+                            <div class="slider-content">
+                                <div class="col-md-12 text-center">
+                                    <h2 class="animated7 white">
+                                        <span>The way of <strong>Success</strong></span>
+                                    </h2>
+                                    <h3 class="animated8 white">
+                                        <span>Why you are waiting</span>
+                                    </h3>
+                                    <div class="">
+                                        <a class="animated4 slider btn btn-primary btn-min-block" href="#">Get Now</a><a class="animated4 slider btn btn-default btn-min-block" href="#">Live Demo</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ Carousel item end -->
+                    </div>
+                    <!-- Carousel inner end-->
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#main-slide" data-slide="prev">
+                        <span><i class="fa fa-angle-left"></i></span>
+                    </a>
+                    <a class="right carousel-control" href="#main-slide" data-slide="next">
+                        <span><i class="fa fa-angle-right"></i></span>
+                    </a>
+                </div>
+                <!-- /carousel -->
+            </div>
+        </div>
+
+
+    </div>
+    <!-- Start Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="row footer-widgets">
+                <!-- Start Subscribe & Social Links Widget -->
+                <div class="col-md-3 col-xs-12">
+                    <div class="footer-widget mail-subscribe-widget">
+                        <h4>Get in touch<span class="head-line"></span></h4>
+                        <p>Join our mailing list to stay up to date and get notices about our new releases!</p>
+                        <form class="subscribe">
+                            <input type="text" placeholder="mail@example.com">
+                            <input type="submit" class="main-button" value="Send">
+                        </form>
+                    </div>
+                    <div class="footer-widget social-widget">
+                        <h4>Follow Us<span class="head-line"></span></h4>
+                        <ul class="social-icons">
+                            <li>
+                                <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a class="google" href="#"><i class="fa fa-google-plus"></i></a>
+                            </li>
+                            <li>
+                                <a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
+                            </li>
+                            <li>
+                                <a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
+                            </li>
+                            <li>
+                                <a class="tumblr" href="#"><i class="fa fa-tumblr"></i></a>
+                            </li>
+                            <li>
+                                <a class="instgram" href="#"><i class="fa fa-instagram"></i></a>
+                            </li>
+                            <li>
+                                <a class="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
+                            </li>
+                            <li>
+                                <a class="skype" href="#"><i class="fa fa-skype"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- .col-md-3 -->
+                <!-- End Subscribe & Social Links Widget -->
+                <!-- Start Twitter Widget -->
+                <div class="col-md-3 col-xs-12">
+                    <div class="footer-widget twitter-widget">
+                        <h4>Twitter Feed<span class="head-line"></span></h4>
+                        <ul>
+                            <li>
+                                <p><a href="#">@ithemeslab </a>Lorem ipsum dolor et, consectetur adipiscing eli.</p>
+                                <span>28 February 2014</span>
+                            </li>
+                            <li>
+                                <p><a href="#">@ithemeslab </a>Lorem ipsum dolor et, consectetur adipiscing eli.An Fusce eleifend aliquet nis application.</p>
+                                <span>26 February 2014</span>
+                            </li>
+                            <li>
+                                <p><a href="#">@ithemeslab </a>Lorem ipsum dolor et, consectetur adipiscing eli.</p>
+                                <span>28 February 2014</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- .col-md-3 -->
+                <!-- End Twitter Widget -->
+                <!-- Start Flickr Widget -->
+                <div class="col-md-3 col-xs-12">
+                    <div class="footer-widget flickr-widget">
+                        <h4>Flicker Feed<span class="head-line"></span></h4>
+                        <ul class="flickr-list">
+                            <li>
+                                <a href="images/flickr-01.jpg" class="lightbox">
+                                    <img alt="" src="images/flickr-01.jpg">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="images/flickr-02.jpg" class="lightbox">
+                                    <img alt="" src="images/flickr-02.jpg">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="images/flickr-03.jpg" class="lightbox">
+                                    <img alt="" src="images/flickr-03.jpg">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="images/flickr-04.jpg" class="lightbox">
+                                    <img alt="" src="images/flickr-04.jpg">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="images/flickr-05.jpg" class="lightbox">
+                                    <img alt="" src="images/flickr-05.jpg">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="images/flickr-06.jpg" class="lightbox">
+                                    <img alt="" src="images/flickr-06.jpg">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="images/flickr-07.jpg" class="lightbox">
+                                    <img alt="" src="images/flickr-07.jpg">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="images/flickr-08.jpg" class="lightbox">
+                                    <img alt="" src="images/flickr-08.jpg">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="images/flickr-09.jpg" class="lightbox">
+                                    <img alt="" src="images/flickr-09.jpg">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- .col-md-3 -->
+                <!-- End Flickr Widget -->
+                <!-- Start Contact Widget -->
+                <div class="col-md-3 col-xs-12">
+                    <div class="footer-widget contact-widget">
+                        <h4>
+                            <img src="images/footer-margo.png" class="img-responsive" alt="Footer Logo" /></h4>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                        <ul>
+                            <li><span>Phone Number:</span> +01 234 567 890</li>
+                            <li><span>Email:</span> company@company.com</li>
+                            <li><span>Website:</span> www.yourdomain.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- .col-md-3 -->
+                <!-- End Contact Widget -->
+
+            </div>
+            <!-- .row -->
+            <!-- Start Copyright -->
+            <div class="copyright-section">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2014 Margo -  All Rights Reserved <a href="http://graygrids.com">GrayGrids</a> </p>
+                    </div>
+                    <!-- .col-md-6 -->
+                    <div class="col-md-6">
+                        <ul class="footer-nav">
+                            <li>
+                                <a href="#">Sitemap</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- .col-md-6 -->
+                </div>
+                <!-- .row -->
+            </div>
+            <!-- End Copyright -->
+        </div>
+    </footer>
+    <!-- End Footer Section -->
+    </div>
             <!-- End Full Body Container -->
-            <!-- Go To Top Link -->
-            <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
-            <div id="loader">
-                <div class="spinner">
-                    <div class="dot1"></div>
-                    <div class="dot2"></div>
-                </div>
-            </div>
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+    <div id="loader">
+        <div class="spinner">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+        </div>
+    </div>
 </body>
 </html>
