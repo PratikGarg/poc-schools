@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <!-- Basic -->
-    <title>Margo | Home</title>
+    <title>Presidium Gurgaon</title>
     <!-- Define Charset -->
     <meta charset="utf-8">
     <!-- Responsive Metatag -->
@@ -36,8 +36,13 @@
     <link rel="stylesheet" type="text/css" href="css/colors/purple.css" title="purple" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/colors/sky-blue.css" title="sky-blue" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/colors/yellow.css" title="yellow" media="screen" />
+    <link rel="stylesheet" href="custom_maps/css/style.css"> 
+    
+    
+   
 
     <!-- Margo JS  -->
+    <script src="custom_maps/js/modernizr.js"></script> <!-- Modernizr -->
     <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.migrate.js"></script>
     <script type="text/javascript" src="js/modernizrr.js"></script>
@@ -60,9 +65,9 @@
     <!--<script type="text/javascript" src="js/gmaps.js"></script>-->
     <script type="text/javascript" src="js/script.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=visualization"></script>
-    <script type="text/javascript" src="js/maps.js"></script>
-
-    <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--script type="text/javascript" src="js/maps.js"></script-->
+    <script src="custom_maps/js/main.js"></script> <!-- Resource jQuery -->
+       <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
 
@@ -223,12 +228,12 @@
         </div>
         <!-- End Services Section -->
 
-        <div class=" service" style="background-color: #5b95c4; padding-top: 20px; padding-bottom: 20px">
+        <div class="service" style="background-color: #444; padding-top: 20px; padding-bottom: 20px">
             <div class="container">
-
+                <h4 class="classic-title" ><span style="color:#fff"><strong>Overview</strong></span></h4>
                 <div class="row" style="background-color: #f8f4fa">
                     <div class="big-title" style="text-align: center; padding-top: 20px">
-                        <h1><span style="border-bottom-color: #ee3733;"><strong>Overview</strong></span></h1>
+                        <h1><span style="border-bottom-color: #ee3733;"><strong></strong></span></h1>
                     </div>
                     <hr width="10%" style="border-color: black" />
                     <br />
@@ -316,12 +321,12 @@
                         </div>
                     </div>
                 </div>
-                <hr />
-
+               <br/><br/>
+                <h4 class="classic-title" ><span style="color:#fff">Transportation</span></h4>
                 <div class="row" style="background-color: #f8f4fa;">
                     <!-- Start Service Icon 7 -->
                     <div class="big-title" style="text-align: center; padding-top: 20px">
-                        <h1><span><strong>Transportation</strong></span></h1>
+                        
                     </div>
                     <hr width="10%" style="border-color: black" />
 
@@ -398,7 +403,7 @@
 
         </div>
         <!-- End Services Section -->
-        <div style="background-color: whitesmoke">
+        <div>
             <div id="facilities" style="padding-top: 80px">
                 <div class="container">
                     <!-- Start Big Heading -->
@@ -431,8 +436,12 @@
                     <!-- End Big Heading -->
                 </div>
             </div>
-            <div id="map-canvas" style="height:500px;width:100%"><br/>
-        </div>
+           <section id="cd-google-map">
+                <div id="google-container"></div>
+                <div id="cd-zoom-in"></div>
+                <div id="cd-zoom-out"></div>
+           </section>
+        </div><br/><br/>
        
         </div>
 
@@ -511,7 +520,7 @@
 
         <!-- End Testimonials Section -->
 
-        <div style="background-color: #f3f3f3;">
+        <div >
 
             <div id="images" class=" section container" style="margin-top:0px;">
                 <h4 class="classic-title"><span>Images</span></h4>
