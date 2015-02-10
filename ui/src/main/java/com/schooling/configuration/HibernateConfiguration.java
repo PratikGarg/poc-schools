@@ -8,16 +8,15 @@ import org.hibernate.cache.ReadWriteCache.Item;
 import org.hibernate.dialect.H2Dialect;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate3.HibernateTransactionManager;
 import org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean;
 
 import com.schooling.model.Order;
 
-@Configuration
+//@Configuration
 public class HibernateConfiguration {
 
-	@Value("#{dataSource}")
+	/*@Value("#{dataSource}")
 	private DataSource dataSource;
 
 	@Bean
@@ -37,7 +36,7 @@ public class HibernateConfiguration {
 	@Bean
 	public HibernateTransactionManager transactionManager() {
 		return new HibernateTransactionManager( sessionFactoryBean().getObject() );
-	}
+	}*/
 
 }
 
