@@ -2,57 +2,79 @@ package com.schooling.publisher.config;
 
 import java.util.Properties;
 
+import javax.inject.Inject;
 import javax.sql.DataSource;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+import org.hibernate.jpa.HibernatePersistenceProvider;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.AdviceMode;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
+import org.springframework.data.domain.AuditorAware;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.transaction.annotation.TransactionManagementConfigurer;
 
-import com.schooling.publisher.Application;
+import com.schooling.publisher.model.User;
+import com.schooling.publisher.security.SecurityUtil;
 
 @Configuration
-@EnableTransactionManagement
-@EnableJpaRepositories(basePackageClasses = Application.class)
-@Import({DataSourceConfigImpl.class})
-@PropertySource("classpath:/services.properties")
-class JpaConfig implements TransactionManagementConfigurer {
+@EnableJpaRepositories(basePackages = {"com.schooling.publisher.repository"})
+@EnableJpaAuditing(auditorAwareRef = "auditor")
+@EnableTransactionManagement(mode = AdviceMode.ASPECTJ)
+public class JpaConfig {
 
-    @Autowired
-    DataSource dataSource;
+    private static final Logger log = LoggerFactory.getLogger(JpaConfig.class);
 
-    @Value("${hibernate.dialect}")
-    private String dialect;
-    @Value("${hibernate.hbm2ddl.auto}")
-    private String hbm2ddlAuto;
+    @Inject
+    private Environment env;
+
+    @Inject
+    private DataSource dataSource;
 
     @Bean
-    public LocalContainerEntityManagerFactoryBean configureEntityManagerFactory() {
-        LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
-        entityManagerFactoryBean.setDataSource(dataSource);
-        entityManagerFactoryBean.setPackagesToScan("com.thysmichels.model");
-        entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+        LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
+        emf.setDataSource(dataSource);
+        emf.setPackagesToScan("com.schooling.publisher");
+        emf.setPersistenceProvider(new HibernatePersistenceProvider());
+        emf.setJpaProperties(jpaProperties());
+        return emf;
+    }
 
-        Properties jpaProperties = new Properties();
-        jpaProperties.put(org.hibernate.cfg.Environment.DIALECT, dialect);
-        jpaProperties.put(org.hibernate.cfg.Environment.HBM2DDL_AUTO, hbm2ddlAuto);
-        entityManagerFactoryBean.setJpaProperties(jpaProperties);
-
-        return entityManagerFactoryBean;
+    private Properties jpaProperties() {
+        Properties extraProperties = new Properties();
+        extraProperties.put("hibernate.format_sql", env.getProperty("hibernate.format_sql"));
+        extraProperties.put("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
+        extraProperties.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
+        if (log.isDebugEnabled()) {
+            log.debug(" hibernate.dialect @" + env.getProperty("hibernate.dialect"));
+        }
+        if (env.getProperty("hibernate.dialect") != null) {
+            extraProperties.put("hibernate.dialect", env.getProperty("hibernate.dialect"));
+        }
+        return extraProperties;
     }
 
     @Bean
-    public PlatformTransactionManager annotationDrivenTransactionManager() {
-        return new JpaTransactionManager();
+    public PlatformTransactionManager transactionManager() {
+        return new JpaTransactionManager(entityManagerFactory().getObject());
     }
+
+    @Bean
+    public AuditorAware<User> auditor() {
+        return new AuditorAware<User>() {
+
+            @Override
+            public User getCurrentAuditor() {
+                return SecurityUtil.currentUser();
+            }
+        };
+    }
+
 }
