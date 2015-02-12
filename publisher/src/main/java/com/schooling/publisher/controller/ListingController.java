@@ -1,5 +1,7 @@
 package com.schooling.publisher.controller;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.slf4j.Logger;
@@ -25,10 +27,10 @@ public class ListingController {
 	@Inject
 	private ListingRepository listingRepository;
 
-	
 	@RequestMapping(value = "/listing", method = RequestMethod.POST)
 	@ResponseBody
-	public ResponseEntity<ResponseMessage> createPost(@RequestBody Listing listing) {
+	public ResponseEntity<ResponseMessage> createPost(
+			@RequestBody Listing listing) {
 		if (log.isDebugEnabled()) {
 			log.debug("create a new post");
 		}
@@ -40,10 +42,24 @@ public class ListingController {
 		}
 
 		return new ResponseEntity<ResponseMessage>(
-				ResponseMessage.success("post.created"),
-				HttpStatus.CREATED);
+				ResponseMessage.success("post.created"), HttpStatus.CREATED);
 	}
+
 	
-	
+	@RequestMapping(value = "/listing", method = RequestMethod.GET)
+	@ResponseBody
+	public ResponseEntity<List<Listing>> getAllPosts() {
+		if (log.isDebugEnabled()) {
+			log.debug("get all listings");
+		}
+
+		List<Listing> listing = listingRepository.findAll();
+
+		if (log.isDebugEnabled()) {
+			log.debug("get posts size @" + listing.size());
+		}
+
+		return new ResponseEntity<List<Listing>>(listing, HttpStatus.OK);
+	}
 
 }

@@ -247,5 +247,27 @@
         };
 
     });
+    
+    
+    as.controller('ListingController', function($scope, $http, i18n) {
+        var actionUrl = 'api/listing/',
+                load = function() {
+                    $http.get(actionUrl).success(function(data) {
+                        $scope.listing = data;
+                    });
+                };
+
+        load();
+
+        $scope.delPost = function(idx) {
+            console.log('delete index @' + idx + ', id is@' + $scope.users[idx].id);
+            if (confirm($.i18n.prop('confirm.delete'))) {
+                $http.delete(actionUrl + $scope.posts[idx].id).success(function() {
+                    $scope.posts.splice(idx, 1);
+                });
+            }
+        };
+
+    });
 
 }());

@@ -44,10 +44,10 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav" ng-show="user.username">
-					<li ng-class="activeWhen(path() == '/posts')"><a
-						href="#/posts"><msg key="posts"></msg></a></li>
-					<li ng-class="activeWhen(path() == '/posts/new')"><a
-						href="#/posts/new"><msg key="newPost"></msg></a></li>
+					<li ng-class="activeWhen(path() == '/listing')"><a
+						href="#/listing"><msg key="posts"></msg></a></li>
+					<li ng-class="activeWhen(path() == '/listing/new')"><a
+						href="#/listing/new"><msg key="newPost"></msg></a></li>
 					<li class="dropdown"
 						ng-class="activeWhen(path().substring(0, 6) === '/admin')"
 						ng-show="user.username && user.role == 'ADMIN'"><a href="#"
