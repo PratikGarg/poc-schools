@@ -3,22 +3,58 @@
 </div>
 
 <form role="form" ng-submit="save()" name="listingForm" novalidate>
+     <div class="form-group" ng-class="{'has-error':listingForm.name.$invalid && !listingForm.name.$pristine}">
+        <label clwass="control-label" for="name"><msg key="name"></msg></label>
 
-    <div class="form-group" ng-class="{'has-error':listingForm.url.$invalid && !listingForm.url.$pristine}">
-        <label class="control-label" for="title"><msg key="title"></msg></label>
+        <input name="name" class="form-control" type="text"
+               placeholder="Name" ng-model="newlisting.content.name" ng-required="true"></input>
+        <p class="help-block" ng-show="listingForm.name.$invalid && !listingForm.name.$pristine">Name is required!</p>
+     </div>
 
-        <input name="title" class="form-control" type="text"
-               placeholder="listing title" ng-model="newlisting.url" ng-required="true"></input>
-        <p class="help-block" ng-show="listingForm.title.$invalid">Title is required!</p>
+     
+    <div class="form-group" ng-class="{'has-error':listingForm.description.$invalid && !listingForm.description.$pristine}">
+        <label class="control-label" for="description"><msg key="description"></msg></label>
+        <textarea name="description" class="form-control" type="text"
+                  placeholder="Listing conent" ng-model="newlisting.content.description" rows="8" ng-required="true" ng-minlength="15"></textarea>
+        <p class="help-block" ng-show="listingForm.description.$invalid && !listingForm.description.$pristine">At least 15 chars</p>
     </div>
 
-    <div class="form-group" ng-class="{'has-error':listingForm.content.$invalid && !listingForm.content.$pristine}">
-        <label class="control-label" for="content"><msg key="content"></msg></label>
-        <textarea name="content" class="form-control" type="text"
-                  placeholder="listing conent" ng-model="newlisting.content" rows="8" ng-required="true" ng-minlength="15"></textarea>
-        <p class="help-block" ng-show="listingForm.content.$invalid">At least 15 chars</p>
+     <div class="form-group" ng-class="{'has-error':listingForm.url.$invalid && !listingForm.url.$pristine}">
+        <label class="control-label" for="title"><msg key="url"></msg></label>
+
+        <input name="url" class="form-control" type="text"
+               placeholder="Page URL" ng-model="newlisting.url" ng-required="true"></input>
+        <p class="help-block" ng-show="listingForm.url.$invalid && !listingForm.url.$pristine"">Page URL is required!</p>
     </div>
     
+    <div class="form-group" ng-class="{'has-error':listingForm.date.$invalid && !listingForm.date.$pristine}">
+        <label class="control-label" for="title"><msg key="date"></msg></label>
+
+        <input name="date" class="form-control" type="text"
+               placeholder="Establishment Date" ng-model="newlisting.content.date" ng-required="true"></input>
+        <p class="help-block" ng-show="listingForm.date.$invalid && !listingForm.date.$pristine"">Establishment Date is required!</p>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error':listingForm.students.$invalid && !listingForm.students.$pristine}">
+        <label class="control-label" for="title"><msg key="students"></msg></label>
+
+        <input name="students" class="form-control" type="text"
+               placeholder="Page STUDENTS" ng-model="newlisting.content.students" ng-required="true"></input>
+        <p class="help-block" ng-show="listingForm.students.$invalid && !listingForm.students.$pristine"">Page STUDENTS is required!</p>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error':listingForm.teachers.$invalid && !listingForm.teachers.$pristine}">
+        <label class="control-label" for="title"><msg key="teachers"></msg></label>
+
+        <input name="teachers" class="form-control" type="text"
+               placeholder="Page TEACHERS" ng-model="newlisting.content.teachers" ng-required="true"></input>
+        <p class="help-block" ng-show="listingForm.teachers.$invalid && !listingForm.teachers.$pristine"">Page TEACHERS is required!</p>
+    </div>
+
+    <hr/>
+    
+
+
     <div class="form-group">
         <button type="submit" ng-disabled="listingForm.$invalid" class="btn btn-primary">
             <msg key="save"></msg>

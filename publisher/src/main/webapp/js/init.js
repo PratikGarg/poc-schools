@@ -33,7 +33,7 @@
                             templateUrl: 'partials/listing/home.html'})  
                 .when('/listing/new',
                         {controller: 'NewListingController',
-                            templateUrl: 'partials/listing/new.html'})           
+                            templateUrl: 'partials/listing/new.html', publicAccess: true})           
                 .when('/posts/:id',
                         {controller: 'DetailsController',
                             templateUrl: 'partials/posts/details.html'})

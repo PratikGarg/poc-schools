@@ -1,9 +1,12 @@
 package com.schooling.publisher.model;
 
+import java.util.Map;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Lob;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.data.jpa.domain.AbstractAuditable;
 
@@ -26,16 +29,27 @@ public class Listing extends AbstractAuditable<User, Long> {
 		this.url = url;
 	}
 
-	public String getContent() {
+	public Map<String,String> getContent() {
 		return content;
 	}
 
-	public void setContent(String content) {
+	public void setContent(Map<String,String> content) {
 		this.content = content;
 	}
 
+	@Transient
+	private Map<String,String> content;
+	
 	@Lob
-	@Column(name = "content")
-	private String content;
+	@Column(name="data")
+	private String data;
+
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
 	
 }

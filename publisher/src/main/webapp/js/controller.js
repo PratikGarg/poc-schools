@@ -21,11 +21,12 @@
             return $location.url();
         };
 
-// $scope.login = function() {
-// console.log('username:password @' + $scope.username + ',' + $scope.password);
-// $scope.$emit('event:loginRequest', $scope.username, $scope.password);
-// //$('#login').modal('hide');
-// };
+		// $scope.login = function() {
+		// console.log('username:password @' + $scope.username + ',' + $scope.password);
+		// $scope.$emit('event:loginRequest', $scope.username, $scope.password);
+		// //$('#login').modal('hide');
+		// };
+        
         $scope.logout = function() {
             $rootScope.user = null;
             $scope.username = $scope.password = null;
