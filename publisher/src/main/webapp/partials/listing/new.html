@@ -1,0 +1,30 @@
+<div class="page-header">
+    <h1>New Listing</h1>
+</div>
+
+<form role="form" ng-submit="save()" name="listingForm" novalidate>
+
+    <div class="form-group" ng-class="{'has-error':listingForm.url.$invalid && !listingForm.url.$pristine}">
+        <label class="control-label" for="title"><msg key="title"></msg></label>
+
+        <input name="title" class="form-control" type="text"
+               placeholder="listing title" ng-model="newlisting.url" ng-required="true"></input>
+        <p class="help-block" ng-show="listingForm.title.$invalid">Title is required!</p>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error':listingForm.content.$invalid && !listingForm.content.$pristine}">
+        <label class="control-label" for="content"><msg key="content"></msg></label>
+        <textarea name="content" class="form-control" type="text"
+                  placeholder="listing conent" ng-model="newlisting.content" rows="8" ng-required="true" ng-minlength="15"></textarea>
+        <p class="help-block" ng-show="listingForm.content.$invalid">At least 15 chars</p>
+    </div>
+    
+    <div class="form-group">
+        <button type="submit" ng-disabled="listingForm.$invalid" class="btn btn-primary">
+            <msg key="save"></msg>
+        </button>
+        <button type="button" ng-click="cancel()" class="btn btn-default" data-dismiss="modal">
+            <msg key="cancel"></msg>
+        </button>
+    </div>
+</form>

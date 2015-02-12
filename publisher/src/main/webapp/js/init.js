@@ -28,6 +28,9 @@
                 .when('/posts/new',
                         {controller: 'NewPostController',
                             templateUrl: 'partials/posts/new.html'})
+                .when('/listing/new',
+                        {controller: 'NewListingController',
+                            templateUrl: 'partials/listing/new.html'})           
                 .when('/posts/:id',
                         {controller: 'DetailsController',
                             templateUrl: 'partials/posts/details.html'})

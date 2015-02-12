@@ -164,6 +164,24 @@
         };
 
     });
+    
+    as.controller('NewListingController', function($scope, $http, i18n, $location) {
+        var actionUrl = 'api/listing/';
+
+        $scope.save = function() {
+            $http.post(actionUrl, $scope.newlisting).success(function() {
+                $location.path('/listing');
+            });
+        };
+
+
+        $scope.cancel = function() {
+            $location.path('/listing');
+        };
+
+    });
+
+    
 
     as.controller('DetailsController', function($scope, $http, $routeParams, $q) {
 
