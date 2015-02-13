@@ -1,6 +1,7 @@
 package com.schooling.publisher.controller;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import javax.inject.Inject;
 
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.schooling.publisher.constant.Constants;
 import com.schooling.publisher.model.Listing;
 import com.schooling.publisher.repository.ListingRepository;
+import com.schooling.publisher.service.ElasticSearchServiceImpl;
 
 @RestController
 @RequestMapping(value = Constants.URI_API)
@@ -27,15 +29,21 @@ public class ListingController {
 	@Inject
 	private ListingRepository listingRepository;
 
+	@Inject
+	private ElasticSearchServiceImpl elasticSearchService;
+	
 	@RequestMapping(value = "/listing", method = RequestMethod.POST)
 	@ResponseBody
 	public ResponseEntity<ResponseMessage> createPost(
-			@RequestBody Listing listing) {
+			@RequestBody Listing listing) throws InterruptedException, ExecutionException {
 		if (log.isDebugEnabled()) {
 			log.debug("create a new post");
 		}
-
+		
+		listing.setData(listing.getContent().toString());
 		Listing saved = listingRepository.save(listing);
+		saved.getContent().put("id", saved.getId());
+		elasticSearchService.index(saved.getContent(), listing.getId().toString());
 
 		if (log.isDebugEnabled()) {
 			log.debug("saved post id is @" + saved.getId());

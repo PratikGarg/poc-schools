@@ -18,7 +18,7 @@ import com.schooling.publisher.constant.Constants;
 
 @Configuration
 @ComponentScan(
-		basePackages={"com.schooling.publisher.security","com.schooling.publisher.controller"},
+		basePackages={"com.schooling.publisher.security","com.schooling.publisher.controller","com.schooling.publisher.service"},
         basePackageClasses = {Constants.class},
         excludeFilters = {
             @Filter(type = FilterType.ANNOTATION, value = {RestController.class, ControllerAdvice.class})
