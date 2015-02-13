@@ -53,6 +53,15 @@
 
     <hr/>
     
+     <div class="form-group">
+    <select name="state" id="state" ng-change="updateCity()" ng-model="newlisting.content.address.state">
+         <option ng:repeat="state in states" value="{{state.id}}">{{state.name}}</option>
+     </select>
+     
+     <select name="city" ng-change="updateLocation()" ng-model="newlisting.content.address.city">
+         <option ng:repeat="city in cities" value="{{city.id}}">{{city.name}}</option>
+     </select>  
+    </div>
 
 
     <div class="form-group">

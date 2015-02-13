@@ -167,14 +167,36 @@
     });
     
     as.controller('NewListingController', function($scope, $http, i18n, $location) {
-        var actionUrl = 'api/listing/';
+     	$scope.newlisting = new Object();
+     	$scope.newlisting.content = new Object();
+     	$scope.newlisting.content.address = new Object();
 
+        var actionUrl = 'api/listing/';
+        
+        states = function() {
+            $http.get('api/state/').success(function(data) {
+                $scope.states = data;
+            });
+        };
+        
+        $scope.updateCity= function() {
+        var stateUrl = 'api/state/'+ $scope.newlisting.content.address.state;
+            $http.get(stateUrl).success(function(data) {
+                $scope.cities = data.$scope.newlisting.content.address.state;
+            });
+        };
+
+        
+        states();
+        
         $scope.save = function() {
             $http.post(actionUrl, $scope.newlisting).success(function() {
                 $location.path('/listing');
             });
         };
-
+       
+       
+       
 
         $scope.cancel = function() {
             $location.path('/listing');
