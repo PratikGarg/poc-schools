@@ -5,6 +5,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -46,7 +47,7 @@ public class City {
 	@JoinColumn(name = "state_id", nullable = false)
 	private State state;
 	
-	@OneToMany(mappedBy = "city")
+	@OneToMany(mappedBy = "city",fetch=FetchType.EAGER)
 	private Set<Location> locations;
 
 	public Set<Location> getLocations() {

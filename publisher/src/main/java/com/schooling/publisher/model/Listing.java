@@ -29,17 +29,19 @@ public class Listing extends AbstractAuditable<User, Long> {
 		this.url = url;
 	}
 
-	public Map<String,String> getContent() {
+	public Map<Object,Object>  getContent() {
 		return content;
 	}
 
-	public void setContent(Map<String,String> content) {
+	public void setContent(Map<Object,Object> content) {
 		this.content = content;
 	}
 
 	@Transient
-	private Map<String,String> content;
+	private Map<Object,Object> content;
 	
+
+
 	@Lob
 	@Column(name="data")
 	private String data;

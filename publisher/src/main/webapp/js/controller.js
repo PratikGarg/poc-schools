@@ -179,24 +179,29 @@
             });
         };
         
+        states();
+
+        
         $scope.updateCity= function() {
         var stateUrl = 'api/state/'+ $scope.newlisting.content.address.state;
             $http.get(stateUrl).success(function(data) {
-                $scope.cities = data.$scope.newlisting.content.address.state;
+                $scope.cities = data.cities;
             });
         };
+        
+        $scope.updateLocation= function() {
+            var stateUrl = 'api/city/'+ $scope.newlisting.content.address.city;
+                $http.get(stateUrl).success(function(data) {
+                    $scope.locations = data.locations;
+                });
+        };
 
-        
-        states();
-        
+
         $scope.save = function() {
             $http.post(actionUrl, $scope.newlisting).success(function() {
                 $location.path('/listing');
             });
         };
-       
-       
-       
 
         $scope.cancel = function() {
             $location.path('/listing');

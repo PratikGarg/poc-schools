@@ -54,13 +54,27 @@
     <hr/>
     
      <div class="form-group">
-    <select name="state" id="state" ng-change="updateCity()" ng-model="newlisting.content.address.state">
-         <option ng:repeat="state in states" value="{{state.id}}">{{state.name}}</option>
-     </select>
-     
-     <select name="city" ng-change="updateLocation()" ng-model="newlisting.content.address.city">
-         <option ng:repeat="city in cities" value="{{city.id}}">{{city.name}}</option>
-     </select>  
+	    <select name="state" id="state" ng-change="updateCity()" ng-model="newlisting.content.address.state">
+	         <option ng:repeat="state in states" value="{{state.id}}">{{state.name}}</option>
+	     </select>
+	     
+	     <select name="city" id="city" ng-change="updateLocation()" ng-model="newlisting.content.address.city">
+	         <option ng:repeat="city in cities" value="{{city.id}}">{{city.name}}</option>
+	     </select>
+	     
+	     <select name="location" ng-model="newlisting.content.address.location">
+	         <option ng:repeat="location in locations" value="{{location.id}}">{{location.name}}</option>
+	     </select>  
+	     
+	      <div class="form-group" ng-class="{'has-error':listingForm.teachers.$invalid && !listingForm.teachers.$pristine}">
+        <label class="control-label" for="title"><msg key="teachers"></msg></label>
+
+	   <div class="form-group" ng-class="{'has-error':listingForm.addressline1.$invalid && !listingForm.addressline1.$pristine}">
+        <label class="control-label" for="addressline1"><msg key="addressline1"></msg></label>
+        <input name="addressline1" class="form-control" type="text"
+               placeholder="Address line1" ng-model="newlisting.content.address.addressline1" ng-required="true"></input>
+        <p class="help-block" ng-show="listingForm.addressline1.$invalid && !listingForm.addressline1.$pristine"">Address line1 is required!</p>
+    </div>
     </div>
 
 
