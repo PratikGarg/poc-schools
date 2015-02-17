@@ -1,89 +1,106 @@
 <div class="page-header">
-    <h1>New Listing</h1>
+	<h1>New Listing</h1>
 </div>
 
 <form role="form" ng-submit="save()" name="listingForm" novalidate>
-     <div class="form-group" ng-class="{'has-error':listingForm.name.$invalid && !listingForm.name.$pristine}">
-        <label clwass="control-label" for="name"><msg key="name"></msg></label>
-
-        <input name="name" class="form-control" type="text"
-               placeholder="Name" ng-model="newlisting.content.name" ng-required="true"></input>
-        <p class="help-block" ng-show="listingForm.name.$invalid && !listingForm.name.$pristine">Name is required!</p>
-     </div>
-
-     
-    <div class="form-group" ng-class="{'has-error':listingForm.description.$invalid && !listingForm.description.$pristine}">
-        <label class="control-label" for="description"><msg key="description"></msg></label>
-        <textarea name="description" class="form-control" type="text"
-                  placeholder="Listing conent" ng-model="newlisting.content.description" rows="8" ng-required="true" ng-minlength="15"></textarea>
-        <p class="help-block" ng-show="listingForm.description.$invalid && !listingForm.description.$pristine">At least 15 chars</p>
-    </div>
-
-     <div class="form-group" ng-class="{'has-error':listingForm.url.$invalid && !listingForm.url.$pristine}">
-        <label class="control-label" for="title"><msg key="url"></msg></label>
-
-        <input name="url" class="form-control" type="text"
-               placeholder="Page URL" ng-model="newlisting.url" ng-required="true"></input>
-        <p class="help-block" ng-show="listingForm.url.$invalid && !listingForm.url.$pristine"">Page URL is required!</p>
-    </div>
-    
-    <div class="form-group" ng-class="{'has-error':listingForm.date.$invalid && !listingForm.date.$pristine}">
-        <label class="control-label" for="title"><msg key="date"></msg></label>
-
-        <input name="date" class="form-control" type="text"
-               placeholder="Establishment Date" ng-model="newlisting.content.date" ng-required="true"></input>
-        <p class="help-block" ng-show="listingForm.date.$invalid && !listingForm.date.$pristine"">Establishment Date is required!</p>
-    </div>
-
-    <div class="form-group" ng-class="{'has-error':listingForm.students.$invalid && !listingForm.students.$pristine}">
-        <label class="control-label" for="title"><msg key="students"></msg></label>
-
-        <input name="students" class="form-control" type="text"
-               placeholder="Page STUDENTS" ng-model="newlisting.content.students" ng-required="true"></input>
-        <p class="help-block" ng-show="listingForm.students.$invalid && !listingForm.students.$pristine"">Page STUDENTS is required!</p>
-    </div>
-
-    <div class="form-group" ng-class="{'has-error':listingForm.teachers.$invalid && !listingForm.teachers.$pristine}">
-        <label class="control-label" for="title"><msg key="teachers"></msg></label>
-
-        <input name="teachers" class="form-control" type="text"
-               placeholder="Page TEACHERS" ng-model="newlisting.content.teachers" ng-required="true"></input>
-        <p class="help-block" ng-show="listingForm.teachers.$invalid && !listingForm.teachers.$pristine"">Page TEACHERS is required!</p>
-    </div>
-
-    <hr/>
-    
-     <div class="form-group">
-	    <select name="state" id="state" ng-change="updateCity()" ng-model="newlisting.content.address.state">
-	         <option ng:repeat="state in states" value="{{state.id}}">{{state.name}}</option>
-	     </select>
-	     
-	     <select name="city" id="city" ng-change="updateLocation()" ng-model="newlisting.content.address.city">
-	         <option ng:repeat="city in cities" value="{{city.id}}">{{city.name}}</option>
-	     </select>
-	     
-	     <select name="location" ng-model="newlisting.content.address.location">
-	         <option ng:repeat="location in locations" value="{{location.id}}">{{location.name}}</option>
-	     </select>  
-	     
-	      <div class="form-group" ng-class="{'has-error':listingForm.teachers.$invalid && !listingForm.teachers.$pristine}">
-        <label class="control-label" for="title"><msg key="teachers"></msg></label>
-
-	   <div class="form-group" ng-class="{'has-error':listingForm.addressline1.$invalid && !listingForm.addressline1.$pristine}">
-        <label class="control-label" for="addressline1"><msg key="addressline1"></msg></label>
-        <input name="addressline1" class="form-control" type="text"
-               placeholder="Address line1" ng-model="newlisting.content.address.addressline1" ng-required="true"></input>
-        <p class="help-block" ng-show="listingForm.addressline1.$invalid && !listingForm.addressline1.$pristine"">Address line1 is required!</p>
-    </div>
-    </div>
+	<div class="form-group"
+		ng-class="{'has-error':listingForm.name.$invalid && !listingForm.name.$pristine}">
+		<label clwass="control-label" for="name"><msg key="name"></msg></label> <input name="name"
+			class="form-control" type="text" placeholder="Name" ng-model="newlisting.content.name"
+			ng-required="true"></input>
+		<p class="help-block" ng-show="listingForm.name.$invalid && !listingForm.name.$pristine">Name
+			is required!</p>
+	</div>
 
 
-    <div class="form-group">
-        <button type="submit" ng-disabled="listingForm.$invalid" class="btn btn-primary">
-            <msg key="save"></msg>
-        </button>
-        <button type="button" ng-click="cancel()" class="btn btn-default" data-dismiss="modal">
-            <msg key="cancel"></msg>
-        </button>
-    </div>
+	<div class="form-group"
+		ng-class="{'has-error':listingForm.description.$invalid && !listingForm.description.$pristine}">
+		<label class="control-label" for="description"><msg key="description"></msg></label>
+		<textarea name="description" class="form-control" type="text" placeholder="Listing conent"
+			ng-model="newlisting.content.description" rows="8" ng-required="true" ng-minlength="15"></textarea>
+		<p class="help-block"
+			ng-show="listingForm.description.$invalid && !listingForm.description.$pristine">At least 15
+			chars</p>
+	</div>
+
+	<div class="form-group"
+		ng-class="{'has-error':listingForm.url.$invalid && !listingForm.url.$pristine}">
+		<label class="control-label" for="title"><msg key="url"></msg></label> <input name="url"
+			class="form-control" type="text" placeholder="Page URL" ng-model="newlisting.url"
+			ng-required="true"></input>
+		<p class="help-block" ng-show="listingForm.url.$invalid && !listingForm.url.$pristine"">Page
+			URL is required!</p>
+	</div>
+
+	<div class="form-group"
+		ng-class="{'has-error':listingForm.date.$invalid && !listingForm.date.$pristine}">
+		<label class="control-label" for="title"><msg key="date"></msg></label> <input name="date"
+			class="form-control" type="text" placeholder="Establishment Date"
+			ng-model="newlisting.content.date" ng-required="true"></input>
+		<p class="help-block" ng-show="listingForm.date.$invalid && !listingForm.date.$pristine"">Establishment
+			Date is required!</p>
+	</div>
+
+	<div class="form-group"
+		ng-class="{'has-error':listingForm.students.$invalid && !listingForm.students.$pristine}">
+		<label class="control-label" for="title"><msg key="students"></msg></label> <input name="students"
+			class="form-control" type="text" placeholder="Page STUDENTS"
+			ng-model="newlisting.content.students" ng-required="true"></input>
+		<p class="help-block" ng-show="listingForm.students.$invalid && !listingForm.students.$pristine"">Page
+			STUDENTS is required!</p>
+	</div>
+
+	<div class="form-group"
+		ng-class="{'has-error':listingForm.teachers.$invalid && !listingForm.teachers.$pristine}">
+		<label class="control-label" for="title"><msg key="teachers"></msg></label> <input name="teachers"
+			class="form-control" type="text" placeholder="Page TEACHERS"
+			ng-model="newlisting.content.teachers" ng-required="true"></input>
+		<p class="help-block" ng-show="listingForm.teachers.$invalid && !listingForm.teachers.$pristine"">Page
+			TEACHERS is required!</p>
+	</div>
+
+	<hr />
+
+	<div class="form-group">
+		<select name="state" id="state" ng-change="updateCity()"
+			ng-model="newlisting.content.address.state">
+			<option ng:repeat="state in states" value="{{state.id}}">{{state.name}}</option>
+		</select> <select name="city" id="city" ng-change="updateLocation()"
+			ng-model="newlisting.content.address.city">
+			<option ng:repeat="city in cities" value="{{city.id}}">{{city.name}}</option>
+		</select> <select name="location" ng-model="newlisting.content.address.location">
+			<option ng:repeat="location in locations" value="{{location.id}}">{{location.name}}</option>
+		</select>
+
+		<div class="form-group"
+			ng-class="{'has-error':listingForm.teachers.$invalid && !listingForm.teachers.$pristine}">
+			<label class="control-label" for="title"><msg key="teachers"></msg></label>
+
+			<div class="form-group"
+				ng-class="{'has-error':listingForm.addressline1.$invalid && !listingForm.addressline1.$pristine}">
+				<label class="control-label" for="addressline1"><msg key="addressline1"></msg></label> <input
+					name="addressline1" class="form-control" type="text" placeholder="Address line1"
+					ng-model="newlisting.content.address.addressline1" ng-required="true"></input>
+				<p class="help-block"
+					ng-show="listingForm.addressline1.$invalid && !listingForm.addressline1.$pristine"">Address
+					line1 is required!</p>
+			</div>
+		</div>
+
+
+		<div class="form-group">
+			<button type="submit" ng-disabled="listingForm.$invalid" class="btn btn-primary">
+				<msg key="save"></msg>
+			</button>
+			<button type="button" ng-click="cancel()" class="btn btn-default" data-dismiss="modal">
+				<msg key="cancel"></msg>
+			</button>
+		</div>
+</form>
+
+<form ng-submit="uploadFile()" class="form-horizontal" enctype="multipart/form-data">
+	<input type="file" name="file" ng-model="document.fileInput" id="file"
+		onchange="angular.element(this).scope().setTitle(this)" /> <input type="text" class="col-sm-4"
+		ng-model="document.title" id="title" />
+	<button class="btn btn-primary" type="submit">Submit</button>
 </form>

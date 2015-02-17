@@ -10,7 +10,7 @@
 			templateUrl : 'partials/login.html',
 			publicAccess : true
 		}).when('/home', {
-			templateUrl : 'partials/index.html',
+			templateUrl : 'index.html',
 			publicAccess : true
 		}).when('/login', {
 			templateUrl : 'partials/login.html',

@@ -154,9 +154,9 @@
     });
     
     as.controller('NewListingController', function($scope, $http, i18n, $location) {
-     	$scope.newlisting = new Object();
-     	$scope.newlisting.content = new Object();
-     	$scope.newlisting.content.address = new Object();
+        $scope.newlisting = new Object();
+        $scope.newlisting.content = new Object();
+        $scope.newlisting.content.address = new Object();
 
         var actionUrl = 'api/listing/';
         
@@ -193,7 +193,36 @@
         $scope.cancel = function() {
             $location.path('/listing');
         };
+        
+        
 
+        $scope.document = {};
+        $scope.setTitle = function(fileInput) {
+        var file=fileInput.value;
+        var filename = file.replace(/^.*[\\\/]/, '');
+        var title = filename.substr(0, filename.lastIndexOf('.'));
+        $("#title").val(title);
+        $("#title").focus();
+        $scope.document.title=title;
+    };
+
+        $scope.uploadFile=function(){
+         var formData=new FormData();
+         formData.append("file",file.files[0]);
+         	 $.ajax({
+			    url: 'api/document',
+			    data: formData,
+			    dataType: 'text',
+			    processData: false,
+			    contentType: false,
+			    type: 'POST',
+			    success: function(data){
+			      $('#result').html(data);
+			    }
+		  });
+
+
+      };
     });
 
     
