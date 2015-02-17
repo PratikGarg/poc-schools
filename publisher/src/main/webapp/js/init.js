@@ -38,6 +38,7 @@
 		}).when('/user/profile', {
 			templateUrl : 'partials/user/profile.html'
 		});
+		
 
 		$httpProvider.interceptors.push(function($q) {
 			var setMessage = function(response) {
@@ -63,7 +64,7 @@
 			};
 		});
 
-		$httpProvider.interceptors.push(function($rootScope, $q) {
+		$httpProvider.interceptors.push(function($rootScope, $q , $cookieStore) {
 			return {
 				'request' : function(config) {
 					return config || $q.when(config);
@@ -122,11 +123,10 @@
 
 				$rootScope.$on('event:loginRequest', function(event, username,
 						password) {
+					
 					httpHeaders.common['Authorization'] = 'Basic '
 							+ base64.encode(username + ':' + password);
-					console.log('httpHeaders.common[\'Authorization\']@'
-							+ httpHeaders.common['Authorization'] + ':::'
-							+ username + ':' + password);
+					
 					$http.get('api/user').success(
 							function(data) {
 								$rootScope.user = data;

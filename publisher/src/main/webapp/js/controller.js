@@ -21,12 +21,6 @@
             return $location.url();
         };
 
-		// $scope.login = function() {
-		// console.log('username:password @' + $scope.username + ',' + $scope.password);
-		// $scope.$emit('event:loginRequest', $scope.username, $scope.password);
-		// //$('#login').modal('hide');
-		// };
-        
         $scope.logout = function() {
             $rootScope.user = null;
             $scope.username = $scope.password = null;
@@ -37,11 +31,8 @@
     });
 
     as.controller('LoginController', function($scope, $rootScope, $http, base64, $location) {
-
         $scope.login = function() {
-            console.log('username:password @' + $scope.username + ',' + $scope.password);
             $scope.$emit('event:loginRequest', $scope.username, $scope.password);
-            // $('#login').modal('hide');
         };
     });
 
@@ -52,8 +43,6 @@
         $scope.changePwd = function() {
             var username = $rootScope.user.username;
             var newpwd = $scope.data.newPassword;
-            console.log('username@' + username);
-            console.log('password new @' + newpwd);
             $http.put(actionUrl, $scope.data)
                     .success(function(data) {
                         console.log(data);
@@ -84,7 +73,6 @@
 
         $scope.updateProfile = function() {
             var displayName = $scope.data.displayName;
-            console.log("displaye Name is @" + displayName);
             $http.put(actionUrl, $scope.data)
                     .success(function(data) {
                         console.log(data);
@@ -118,7 +106,6 @@
         $scope.user = {};
 
         $scope.delete = function(idx) {
-            console.log('delete index @' + idx + ', id is@' + $scope.users[idx].id);
             if (confirm($.i18n.prop('confirm.delete'))) {
                 $http.delete(actionUrl + $scope.users[idx].id).success(function() {
                     load();
@@ -266,7 +253,6 @@
         load();
 
         $scope.delPost = function(idx) {
-            console.log('delete index @' + idx + ', id is@' + $scope.users[idx].id);
             if (confirm($.i18n.prop('confirm.delete'))) {
                 $http.delete(actionUrl + $scope.posts[idx].id).success(function() {
                     $scope.posts.splice(idx, 1);
@@ -288,7 +274,6 @@
         load();
 
         $scope.delPost = function(idx) {
-            console.log('delete index @' + idx + ', id is@' + $scope.users[idx].id);
             if (confirm($.i18n.prop('confirm.delete'))) {
                 $http.delete(actionUrl + $scope.posts[idx].id).success(function() {
                     $scope.posts.splice(idx, 1);
