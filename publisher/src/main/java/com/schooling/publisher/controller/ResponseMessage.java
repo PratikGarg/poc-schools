@@ -1,10 +1,5 @@
 package com.schooling.publisher.controller;
 
-/**
- * Used to transport messages back to the client.
- * 
- * @author hantsy
- */
 public class ResponseMessage {
 	public enum Type {
 		success, warning, danger, info;
