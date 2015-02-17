@@ -207,8 +207,9 @@
     };
 
         $scope.uploadFile=function(){
-         var formData=new FormData();
+         var formData = new FormData();
          formData.append("file",file.files[0]);
+         formData.append("id",20);
          	 $.ajax({
 			    url: 'api/document',
 			    data: formData,
