@@ -1,0 +1,16 @@
+﻿<div>
+    <h4 class="classic-title"><span>{{eventList.heading}}</span></h4>
+    <div class="row">
+        <!-- Start Service Icon 1 -->
+        <div ng-repeat="(key, value) in eventList.list" class="col-md-12 col-sm-12 service-box service-icon-left-more">
+            <div class="service-icon">
+                <i class="fa {{value.icon}} fa-4x"></i>
+            </div>
+            <div class="service-content">
+                <h2>{{value.name}}</h2>
+                <p>{{value.description}}</p>
+            </div>
+        </div>
+        <!-- End Service Icon 1 -->
+    </div>
+</div>

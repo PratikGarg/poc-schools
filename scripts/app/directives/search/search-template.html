@@ -1,0 +1,16 @@
+﻿<div class="widget widget-search ">
+    <div class="col-xs-4" >
+        <div class="left-inner-addon ">
+            <input type="search" id="search-location"  ng-model="model.location" autocomplete="off" spellcheck="false" placeholder="Select Location">
+            <i class="fa fa-map-marker"></i>
+        </div>
+    </div>
+    <div class="col-xs-6" >
+        <div class="left-inner-addon ">
+            <input type="search" id="search-keyword" ng-model="model.keyword" placeholder="Enter Keywords">
+            <i class="fa fa-search"></i>
+        </div>
+        {{model.search}}
+        <input class="main-button" type="submit" ng-click="model.search()" value="Search">
+    </div>
+</div>
